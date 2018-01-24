@@ -119,7 +119,7 @@
 				padding-left: 10px;
 			}
 			.mui-table-view-cell .explainList {
-				font-size: 20px;
+				font-size: 19px;
 				color: #333;
 				text-indent: 2em;
 			}
@@ -128,11 +128,17 @@
 				padding: 10px 0;
 				position: relative;
 			}
-			.mui-table-view-cell .contentList>img {			/*  */
+			.mui-table-view-cell .contentList>img {			/* 图片 */
 				width: 100%;
 			}
-			.mui-table-view-cell .contentList>video {
+			.mui-table-view-cell .contentList>video {		/* 视频 */
 				width: 100%;
+			}
+			.mui-table-view-cell .contentList>p {			/* 文字 */
+				font-size: 20px;
+				color: #666;
+				padding: 10px;
+				text-indent: 2em;
 			}
 			.mui-table-view-cell .contentList>span {
 				position: absolute;
@@ -163,6 +169,15 @@
 				text-align: right;
 				padding-right: 20px;
 			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {	/* 导航颜色主题更换 */
+				color: #ff6600;
+			}
+			.upvoteActive {
+				color: #ff6600;
+			}
+			.mui-table-view-cell .admireList li.upvote {
+				color: #ccc;
+			}
 		</style>
 	</head>
 
@@ -179,7 +194,7 @@
 								图片
 							</a>
 							<a class="mui-control-item" href="#item3mobile">
-								视屏
+								视频
 							</a>
 							<a class="mui-control-item" href="#item4mobile">
 								神技能
@@ -212,7 +227,7 @@
 												<span>浮点网络</span>
 											</section>
 											<ul class="admireList">
-												<li>
+												<li class="upvote">
 													<span class="mui-icon mui-icon-flag"></span>
 													<b>652</b>
 												</li>
@@ -240,7 +255,7 @@
 												<span>浮点网络</span>
 											</section>
 											<ul class="admireList">
-												<li>
+												<li class="upvote">
 													<span class="mui-icon mui-icon-flag"></span>
 													<b>652</b>
 												</li>
@@ -268,7 +283,7 @@
 												<span>浮点网络</span>
 											</section>
 											<ul class="admireList">
-												<li>
+												<li class="upvote">
 													<span class="mui-icon mui-icon-flag"></span>
 													<b>652</b>
 												</li>
@@ -304,7 +319,7 @@
 												<span>浮点网络</span>
 											</section>
 											<ul class="admireList">
-												<li>
+												<li class="upvote">
 													<span class="mui-icon mui-icon-flag"></span>
 													<b>652</b>
 												</li>
@@ -332,7 +347,7 @@
 												<span>浮点网络</span>
 											</section>
 											<ul class="admireList">
-												<li>
+												<li class="upvote">
 													<span class="mui-icon mui-icon-flag"></span>
 													<b>652</b>
 												</li>
@@ -360,7 +375,7 @@
 												<span>浮点网络</span>
 											</section>
 											<ul class="admireList">
-												<li>
+												<li class="upvote">
 													<span class="mui-icon mui-icon-flag"></span>
 													<b>652</b>
 												</li>
@@ -395,7 +410,7 @@
 												<video  width="100%" height="100%" controls="controls" src="videoAndAudio/microShow01.mp4"></video>
 											</section>
 											<ul class="admireList">
-												<li>
+												<li class="upvote">
 													<span class="mui-icon mui-icon-flag"></span>
 													<b>652</b>
 												</li>
@@ -422,7 +437,7 @@
 												<video  width="100%" height="100%" controls="controls" src="videoAndAudio/microShow02.mp4"></video>
 											</section>
 											<ul class="admireList">
-												<li>
+												<li class="upvote">
 													<span class="mui-icon mui-icon-flag"></span>
 													<b>652</b>
 												</li>
@@ -449,7 +464,7 @@
 												<video  width="100%" height="100%" controls="controls" src="videoAndAudio/microShow01.mp4"></video>
 											</section>
 											<ul class="admireList">
-												<li>
+												<li class="upvote">
 													<span class="mui-icon mui-icon-flag"></span>
 													<b>652</b>
 												</li>
@@ -471,19 +486,91 @@
 								<div class="mui-scroll">
 									<ul class="mui-table-view">
 										<li class="mui-table-view-cell">
-											第4个选项卡子项-1
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list02.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<img src="images/index/list02.jpg"/>
+											</section>
+											<ul class="admireList">
+												<li class="upvote">
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 										<li class="mui-table-view-cell">
-											第4个选项卡子项-2
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list03.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<p>
+													北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+													北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+													北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+													北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+													北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+												</p>
+											</section>
+											<ul class="admireList">
+												<li class="upvote">
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 										<li class="mui-table-view-cell">
-											第4个选项卡子项-3
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-4
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-5
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list02.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<video  width="100%" height="100%" controls="controls" src="videoAndAudio/microShow01.mp4"></video>
+											</section>
+											<ul class="admireList">
+												<li class="upvote">
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 									</ul>
 								</div>
@@ -755,6 +842,21 @@
 					};
 				});
 			})(mui);
+		</script>
+		<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".upvote").css("color","#ccc");
+				$(".upvote").on("tap",function(){
+					var upvoteSelf = $(this);
+					console.log(upvoteSelf[0].style);
+					if (upvoteSelf[0].style.color == "rgb(204, 204, 204)") {
+						upvoteSelf.css("color","#FF6600");
+					} else{
+						mui.toast("您已点赞过了");
+					}
+				})
+			})
 		</script>
 	</body>
 
