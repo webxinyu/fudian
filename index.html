@@ -11,6 +11,9 @@
 			body {
 				background-color: #efeff4;
 			}
+			ul,ol,li {
+				list-style: none;
+			}
 			.mui-bar~.mui-content .mui-fullscreen {
 				top: 44px;
 				height: auto;
@@ -83,6 +86,83 @@
 			.mui-slider-group {
 				padding-bottom: 44px;
 			}
+			.mui-table-view-cell {			/* 列表样式重置 */
+				padding: 0;	
+			}
+			.mui-table-view-cell:after {
+				display: none;
+			}
+			.mui-table-view-cell .nicknameList {		/* 首页列表用户昵称 */
+				height: 40px;
+				overflow: hidden;
+			}
+			.mui-table-view-cell .nicknameList>span {
+				float: left;
+			}
+			.mui-table-view-cell .nicknameList>span:nth-of-type(1) {
+				height: 40px;
+				width: 40px;
+				padding: 5px;
+			}
+			.mui-table-view-cell .nicknameList>span:nth-of-type(1)>img {
+				display: block;
+				height: 30px;
+				width: 30px;
+				border-radius: 15px;
+				-webkit-border-radius: 15px;
+			}
+			.mui-table-view-cell .nicknameList>span:nth-of-type(2) {
+				height: 40px;
+				line-height: 40px;
+				font-size: 18px;
+				color: #999;
+				padding-left: 10px;
+			}
+			.mui-table-view-cell .explainList {
+				font-size: 20px;
+				color: #333;
+				text-indent: 2em;
+			}
+			.mui-table-view-cell .contentList {				/* 主体内容 */
+				width: 100%;
+				padding: 10px 0;
+				position: relative;
+			}
+			.mui-table-view-cell .contentList>img {			/*  */
+				width: 100%;
+			}
+			.mui-table-view-cell .contentList>video {
+				width: 100%;
+			}
+			.mui-table-view-cell .contentList>span {
+				position: absolute;
+				bottom: 5px;
+				right: 15px;
+				color: #fff;
+				font-family:"微软雅黑";
+				display: block;
+				height: 60px;
+				width: 150px;
+				font-size: 30px;
+				text-align: right;
+				font-style: oblique;
+			}
+			.mui-table-view-cell .admireList {
+				display: flex;
+				padding-left: 0;
+			}
+			.mui-table-view-cell .admireList li {
+				flex: 1;
+				text-align: center;
+				height: 30px;
+				line-height: 30px;
+				color: #ccc;
+			}
+			.mui-table-view-cell .admireList li:last-of-type {
+				flex: 2;
+				text-align: right;
+				padding-right: 20px;
+			}
 		</style>
 	</head>
 
@@ -118,64 +198,88 @@
 								<div class="mui-scroll">
 									<ul class="mui-table-view">
 										<li class="mui-table-view-cell">
-											第1个选项卡子项-1
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list03.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<img src="images/index/list02.jpg"/>
+												<span>浮点网络</span>
+											</section>
+											<ul class="admireList">
+												<li>
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 										<li class="mui-table-view-cell">
-											第1个选项卡子项-2
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list01.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<img src="images/index/list01.jpg"/>
+												<span>浮点网络</span>
+											</section>
+											<ul class="admireList">
+												<li>
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 										<li class="mui-table-view-cell">
-											第1个选项卡子项-3
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-4
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-5
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-6
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-7
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-8
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-9
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-10
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-11
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-12
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-13
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-14
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-15
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-16
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-17
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-18
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-19
-										</li>
-										<li class="mui-table-view-cell">
-											第1个选项卡子项-20
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list04.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<img src="images/index/list04.jpg"/>
+												<span>浮点网络</span>
+											</section>
+											<ul class="admireList">
+												<li>
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 									</ul>
 								</div>
@@ -186,64 +290,88 @@
 								<div class="mui-scroll">
 									<ul class="mui-table-view">
 										<li class="mui-table-view-cell">
-											第2个选项卡子项-1
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list04.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<img src="images/index/list04.jpg"/>
+												<span>浮点网络</span>
+											</section>
+											<ul class="admireList">
+												<li>
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 										<li class="mui-table-view-cell">
-											第2个选项卡子项-2
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list03.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<img src="images/index/list03.jpg"/>
+												<span>浮点网络</span>
+											</section>
+											<ul class="admireList">
+												<li>
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 										<li class="mui-table-view-cell">
-											第2个选项卡子项-3
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-4
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-5
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-6
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-7
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-8
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-9
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-10
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-11
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-12
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-13
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-14
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-15
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-16
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-17
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-18
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-19
-										</li>
-										<li class="mui-table-view-cell">
-											第2个选项卡子项-20
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list02.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<img src="images/index/list02.jpg"/>
+												<span>浮点网络</span>
+											</section>
+											<ul class="admireList">
+												<li>
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 									</ul>
 								</div>
@@ -254,64 +382,85 @@
 								<div class="mui-scroll">
 									<ul class="mui-table-view">
 										<li class="mui-table-view-cell">
-											第3个选项卡子项-1
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list04.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<video  width="100%" height="100%" controls="controls" src="videoAndAudio/microShow01.mp4"></video>
+											</section>
+											<ul class="admireList">
+												<li>
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 										<li class="mui-table-view-cell">
-											第3个选项卡子项-2
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list03.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<video  width="100%" height="100%" controls="controls" src="videoAndAudio/microShow02.mp4"></video>
+											</section>
+											<ul class="admireList">
+												<li>
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 										<li class="mui-table-view-cell">
-											第3个选项卡子项-3
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-4
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-5
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-6
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-7
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-8
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-9
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-10
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-11
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-12
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-13
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-14
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-15
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-16
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-17
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-18
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-19
-										</li>
-										<li class="mui-table-view-cell">
-											第3个选项卡子项-20
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list02.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<video  width="100%" height="100%" controls="controls" src="videoAndAudio/microShow01.mp4"></video>
+											</section>
+											<ul class="admireList">
+												<li>
+													<span class="mui-icon mui-icon-flag"></span>
+													<b>652</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-compose"></span>
+													<b>154</b>
+												</li>
+												<li>
+													<span class="mui-icon mui-icon-redo"></span>
+												</li>
+											</ul>
 										</li>
 									</ul>
 								</div>
@@ -336,51 +485,6 @@
 										<li class="mui-table-view-cell">
 											第4个选项卡子项-5
 										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-6
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-7
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-8
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-9
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-10
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-11
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-12
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-13
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-14
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-15
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-16
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-17
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-18
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-19
-										</li>
-										<li class="mui-table-view-cell">
-											第4个选项卡子项-20
-										</li>
 									</ul>
 								</div>
 							</div>
@@ -404,51 +508,6 @@
 										<li class="mui-table-view-cell">
 											第5个选项卡子项-5
 										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-6
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-7
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-8
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-9
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-10
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-11
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-12
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-13
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-14
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-15
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-16
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-17
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-18
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-19
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-20
-										</li>
 									</ul>
 								</div>
 							</div>
@@ -471,51 +530,6 @@
 										</li>
 										<li class="mui-table-view-cell">
 											第6个选项卡子项-5
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-6
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-7
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-8
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-9
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-10
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-11
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-12
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-13
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-14
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-15
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-16
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-17
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-18
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-19
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-20
 										</li>
 									</ul>
 								</div>
