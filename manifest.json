@@ -7,7 +7,7 @@
 	"id": "mui_template_nativetab",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "孚点网",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "1.1",/*应用版本名称*/
+		"name": "1.0.1",/*应用版本名称*/
 		"code": ""
 	},
 	"description": "nativeObj模式底部选项卡 + 底部悬浮大球图标 + webview模式子窗口官方示例",/*应用描述信息*/
@@ -366,9 +366,9 @@
 				"android": {
 					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
 					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
-					"hdpi": "", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": ""
+					"hdpi": "images/index/startPage.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "images/index/startPage.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "images/index/startPage.png"
 				}
 			}
 		}
@@ -449,7 +449,9 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf"
 				],
-				"refer": [],
+				"refer": [
+					"html/home/homePage.html"
+				],
 				"priority": 0
 			}
 		},

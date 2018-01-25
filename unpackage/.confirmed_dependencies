@@ -71,6 +71,8 @@
       "js/mui.min.js",
       "fonts/mui.ttf"
     ],
-    "refer": []
+    "refer": [
+      "html/home/homePage.html"
+    ]
   }
 }
