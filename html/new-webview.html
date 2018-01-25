@@ -3,18 +3,132 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>new webview</title>
+		<title>个人主页</title>
 		<script src="../js/mui.min.js"></script>
 		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<style type="text/css">
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			ul{
+				padding: 0;
+			}
+			ul,li {
+				list-style: none;
+			}
+			.typePage {
+				padding: 20px;
+				background: #fff;
+			}
+			header {
+				height: 100px;
+				display: flex;
+				padding-bottom: 20px;
+				border-bottom: 1px #efeff4 solid;
+			}
+			header>span:nth-of-type(1) {			
+				flex: 1;
+				height: 80px;
+			}
+			header>span:nth-of-type(1)>img {		/* 头像 */
+				display: block;
+				height: 60px;
+				width: 60px;
+				margin: 10px 10px 10px 0px;
+				border-radius: 30px;
+				-webkit-border-radius: 30px;
+			}
+			header .myNickName {
+				flex: 3;
+				height: 80px;
+			}
+			header .myNickName>h4 {			/* 昵称 */
+				height: 50px;
+				padding-top: 20px;
+				font-size: 22px;
+				margin: 0;
+			}
+			header .myNickName>h5 {
+				height: 30px;
+				margin: 0;
+			}
+			header .myNickName>p {			/* 登录注册按钮 */
+				height: 80px;
+				line-height: 80px;
+				font-size: 20px;
+				color: #666;
+			}
+			header span:nth-of-type(2) {
+				flex: 1;
+				height: 80px;
+				line-height: 80px;
+				text-align: right;
+			}
+			header span:nth-of-type(2)>.iconfont {
+				font-size: 25px;
+				color: #333;
+			}
+			.achievement {
+				width: 100%;
+				margin-top: 10px;
+				height: 80px;
+				border-bottom: 1px #efeff4 solid;
+			}
+			.achievement tr {
+				height: 30px;
+				line-height: 30px;
+				display: flex;
+			}
+			.achievement tr th {
+				flex: 1;
+				font-weight: normal;
+			}
+			.achievement tr td {
+				flex: 1;
+				text-align: center;
+				font-size: 14px;
+				color: #999;
+			}
+		</style>
 	</head>
 	<body>
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">新窗口</h1>
-		</header>
-		<div class="mui-content">
-			<p style="margin-top:20px;margin-left: 20px;">这是subNView模式下打开的新窗口。</p>
+		<div class="typePage">
+			<header>
+				<!-- 个人头像 -->
+				<span>
+					<img style="display: none;" src="login/images/user-photo.png" />
+					<img src="../images/index/list04.jpg"/>
+				</span>
+				<div class="myNickName">
+					<h4>ai小飞</h4>
+					<h5>个人主页</h5>
+					<p style="display: none;">登录/注册</p>
+				</div>
+				<span>
+					<i class="iconfont icon-fanhui2"></i>
+				</span>
+			</header>
+			<!-- 个人成就 -->
+			<table class="achievement" border="0" cellspacing="" cellpadding="">
+				<tr>
+					<th>66</th>
+					<th>100</th>
+					<th>566</th>
+					<th>564</th>
+				</tr>
+				<tr>
+					<td>投稿获赞</td>
+					<td>粉丝</td>
+					<td>关注</td>
+					<td>积分</td>
+				</tr>
+			</table>		
 		</div>
+		
+		
+		
 		
 		<script>
 			mui.init();
