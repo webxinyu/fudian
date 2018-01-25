@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Hello MUI</title>
+		<title>消息</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -13,137 +13,122 @@
 			body {
 				background-color: #efeff4;
 			}
-			
-			.title {
-				padding: 20px 15px 10px;
-				color: #6d6d72;
+			ul{
+				padding: 0;
+			}
+			ul,li {
+				list-style: none;
+			}
+			.messageClassification {		/* 分类消息 */
+				padding-top: 35px;
+				background: #fff;
+			}
+			.messageClassification li {
+				display: flex;
+				height: 80px;
+				padding: 10px 0;
+				border-bottom: 1px #efeff4 solid;
+			}
+			.messageClassification li>span {
+				flex: 1;
+				height: 60px;
+			}
+			.messageClassification li>span>img {
+				height: 50px;
+				width: 50px;
+				border-radius: 25px;
+				-webkit-border-radius: 25px;
+				margin: 5px;
+			}
+			.messageClassification li .systemMessages {
+				flex: 4;
+				height: 60px;
+			}
+			.messageClassification li .systemMessages>h2 {
+				height: 40px;
+				line-height: 40px;
+				font-size: 18px;
+				margin: 0;
+				position: relative;
+				color: #333;
+			}
+			.messageClassification li .systemMessages>h2>b {
+				font-weight: normal;
+				font-size: 16px;
+				color: #BCBCBC;
+				position: absolute;
+				right: 20px;
+			}
+			.messageClassification li .systemMessages>p {
+				margin: 0;
+				height: 20px;
+				line-height: 20px;
+				width: 15rem;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				color: #BCBCBC;
 				font-size: 15px;
-				background-color: #fff;
 			}
 		</style>
 	</head>
 
 	<body>
-		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
-			<div class="mui-scroll">
-				<div class="title">
-					这是subNView模式选项卡中的第1个子页面，该页面展示一个支持单webview模式的下拉刷新、上拉加载的消息列表
+		<header id="header" class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">消息</h1>
+		</header>
+		<!-- 分类消息 -->
+		<ul class="messageClassification">
+			<!-- 系统消息 -->
+			<li id="toSystemMessages">
+				<span>
+					<img src="../images/index/list03.jpg"/>
+				</span>
+				<div class="systemMessages">
+					<h2>
+						<span>系统消息</span>
+						<b>1月25日13:27</b>
+					</h2>
+					<p>关注孚点网即可领取过年小礼品</p>
 				</div>
-				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 1</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 2</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 3</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 4</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 5</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 6</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 7</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 8</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 9</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 10</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 11</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 12</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 13</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 14</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 15</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 16</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 17</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 18</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 19</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 20</a>
-					</li>
-				</ul>
-			</div>
-		</div>
+			</li>
+			<!-- 互动消息 -->
+			<li id="toInteraction">
+				<span>
+					<img src="../images/index/list04.jpg"/>
+				</span>
+				<div class="systemMessages">
+					<h2>
+						<span>互动</span>
+						<b>1月25日13:27</b>
+					</h2>
+					<p>关注孚点网即可领取过年小礼品,还可抽取万元现金红包哟</p>
+				</div>
+			</li>
+		</ul>
 		<script src="../js/mui.min.js"></script>
 		<script>
-			mui.init({
-				swipeBack: false,
-				pullRefresh: {
-					container: '#pullrefresh',
-					down: {
-						style:'circle',
-						callback: pulldownRefresh
-					},
-					up: {
-						contentrefresh: '正在加载...',
-						callback: pullupRefresh
-					}
-				}
+			mui.init();
+			document.getElementById('toSystemMessages').addEventListener('tap', function() {
+				//打开系统消息页面
+				mui.openWindow({
+				    url: 'subpage/systemMessages.html', 
+				    id:'toSystemMessages',
+				    extras:{
+				       name:'toSystemMessages',
+				    }
+				});
 			});
-			/**
-			 * 下拉刷新具体业务实现
-			 */
-			function pulldownRefresh() {
-				setTimeout(function() {
-					var table = document.body.querySelector('.mui-table-view');
-					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-					for(var i = cells.length, len = i + 3; i < len; i++) {
-						var li = document.createElement('li');
-						li.className = 'mui-table-view-cell';
-						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
-						//下拉刷新，新纪录插到最前面；
-						table.insertBefore(li, table.firstChild);
-					}
-					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-					mui.toast('下拉刷新成功');
-				}, 1000);
-			}
-			var count = 0;
-			/**
-			 * 上拉加载具体业务实现
-			 */
-			function pullupRefresh() {
-				setTimeout(function() {
-					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
-					var table = document.body.querySelector('.mui-table-view');
-					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-					for(var i = cells.length, len = i + 20; i < len; i++) {
-						var li = document.createElement('li');
-						li.className = 'mui-table-view-cell';
-						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
-						table.appendChild(li);
-					}
-				}, 1000);
-			}
+			document.getElementById('toInteraction').addEventListener('tap', function() {
+				//打开互动页面
+				mui.openWindow({
+				    url: 'subpage/interaction.html', 
+				    id:'toInteraction',
+				    extras:{
+				       name:'toInteraction',
+				    }
+				});
+			});
 		</script>
 	</body>
 

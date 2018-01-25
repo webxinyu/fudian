@@ -125,7 +125,7 @@
 						{
 							"tag": "font",
 							"id": "indexIcon",
-							"text": "\ue500",
+							"text": "\ue650",
 							"position": {
 								"top": "4px",
 								"left": "0",
@@ -133,7 +133,7 @@
 								"height": "24px"
 							},
 							"textStyles": {
-								"fontSrc": "_www/fonts/mui.ttf",
+								"fontSrc": "images/font_wbomqjbh7st6gvi/iconfont.ttf",
 								"align": "center",
 								"size": "24px"
 							}
@@ -154,7 +154,7 @@
 						},{
 							"tag": "font",
 							"id": "newsIcon",
-							"text": "\ue201",
+							"text": "\ue63b",
 							"position": {
 								"top": "4px",
 								"left": "20%",
@@ -162,7 +162,7 @@
 								"height": "24px"
 							},
 							"textStyles": {
-								"fontSrc": "_www/fonts/mui.ttf",
+								"fontSrc": "images/font_wbomqjbh7st6gvi/iconfont.ttf",
 								"align": "center",
 								"size": "24px"
 							}
@@ -183,7 +183,7 @@
 						},{
 							"tag": "font",
 							"id": "contactIcon",
-							"text": "\ue300",
+							"text": "\ue608",
 							"position": {
 								"top": "4px",
 								"left": "55%",
@@ -191,14 +191,14 @@
 								"height": "24px"
 							},
 							"textStyles": {
-								"fontSrc": "_www/fonts/mui.ttf",
+								"fontSrc": "images/font_wbomqjbh7st6gvi/iconfont.ttf",
 								"align": "center",
 								"size": "24px"
 							}
 						}, {
 							"tag": "font",
 							"id": "contactText",
-							"text": "我的",
+							"text": "发现",
 							"position": {
 								"top": "24px",
 								"left": "55%",
@@ -212,7 +212,7 @@
 						},{
 							"tag": "font",
 							"id": "newwindowIcon",
-							"text": "\ue6c9",
+							"text": "\ue619",
 							"position": {
 								"top": "4px",
 								"left": "75%",
@@ -220,14 +220,14 @@
 								"height": "24px"
 							},
 							"textStyles": {
-								"fontSrc": "_www/fonts/iconfont.ttf",
+								"fontSrc": "images/font_wbomqjbh7st6gvi/iconfont.ttf",
 								"align": "center",
 								"size": "24px"
 							}
 						}, {
 							"tag": "font",
 							"id": "newwindowText",
-							"text": "分享",
+							"text": "我的",
 							"position": {
 								"top": "24px",
 								"left": "75%",
@@ -428,7 +428,10 @@
 					"js/mui.min.js",
 					"css/mui.min.css"
 				],
-				"refer": [],
+				"refer": [
+					"html/subpage/systemMessages.html",
+					"html/subpage/interaction.html"
+				],
 				"priority": 0
 			},
 			"html/tab-webview-subpage-contact.html": {

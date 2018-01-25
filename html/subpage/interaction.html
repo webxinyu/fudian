@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<title>系统消息</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+		<style type="text/css">
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			ul{
+				padding: 0;
+			}
+			ul,li {
+				list-style: none;
+			}
+			.interactionList {
+				padding-top: 35px;
+				background: #fff;
+			}
+			.interactionList li {
+				padding: 20px 10px;
+				border-bottom: 1px #efeff4 solid;
+			}
+			.commentator {
+				height: 50px;
+				display: flex;
+			}
+			.commentator>span {			
+				flex: 1;
+				height: 50px;
+			}
+			.commentator>span>img {			/* 评论人的头像 */
+				display: block;
+				width: 40px;
+				height: 40px;
+				margin: 5px;
+				border-radius: 20px;
+				-webkit-border-radius: 20px;
+			}
+			.commentator .commentatorNickname {
+				flex: 4;
+				height: 50px;
+			}
+			.commentator .commentatorNickname>h3 {
+				height: 30px;
+				line-height: 30px;
+				font-size: 18px;
+				margin: 0;
+				color: #666;
+				font-weight: normal;
+			}
+			.commentator .commentatorNickname>p {
+				height: 20px;
+				font-size: 14px;
+				margin: 0;
+			}
+			.myContent {			/* 被点评的文章 */
+				display: flex;
+				margin-top: 10px;
+			}
+			.myContent>span {
+				flex: 1;
+			}
+			.myContent .content {
+				flex: 4;
+				background: #F3F3F3;
+				padding: 10px;
+			}
+			.myContent .content img {
+				float: left;
+				width: 80px;
+				height: 80px;
+			}
+			.comment {				/* 评语 */
+				display: flex;
+				padding: 10px 0;
+			}
+			.comment>span {
+				flex: 1;
+			}
+			.comment .commentContent {
+				flex: 4;
+				font-size: 18px;
+			}
+			.comment .commentContent img {
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+			}
+		</style>
+	</head>
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a onclick="back()" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">互动</h1>
+		</header>
+		<ul class="interactionList">
+			<li>
+				<!-- 评论人信息 -->
+				<div class="commentator">
+					<!-- 头像 -->
+					<span>
+						<img src="../../images/index/list02.jpg"/>
+					</span>
+					<div class="commentatorNickname">
+						<h3>孚点网小客服</h3>
+						<p>01-25 14:35</p>
+					</div>
+				</div>
+				<!-- 评语 -->
+				<section class="comment">
+					<span></span>
+					<div class="commentContent">
+						我的任务就是来拯救这个世界的！
+					</div>
+				</section>
+				<!-- 被点评的文章 -->
+				<div class="myContent">
+					<span></span>
+					<div class="content">
+						<img src="../../images/index/list01.jpg" />
+						<span>人来到这个世界上是带着任务的。任务完成了，就会离开去另一个宇宙接着执行任务。</span>	
+					</div>
+				</div>
+			</li>
+			<li>
+				<!-- 评论人信息 -->
+				<div class="commentator">
+					<!-- 头像 -->
+					<span>
+						<img src="../../images/index/list04.jpg"/>
+					</span>
+					<div class="commentatorNickname">
+						<h3>孚点网小客服</h3>
+						<p>01-25 14:35</p>
+					</div>
+				</div>
+				<!-- 评语 -->
+				<section class="comment">
+					<span></span>
+					<div class="commentContent">
+						我的任务就是来拯救这个世界的！
+					</div>
+				</section>
+				<!-- 被点评的文章 -->
+				<div class="myContent">
+					<span></span>
+					<div class="content">
+						<!--<img src="../../images/index/list03.jpg" />-->
+						<span>
+							你不用太拼命，只要比周围人多尽力一点点　　文/欣所向之　　
+							1　　侄女读书特别厉害，在他们初中部，几乎每次考试成绩排名都稳在前三。
+							语数外政史地不偏科，关键还是美少女一个。有次一起吃饭，我夹了块肉给她，
+							“学习这么努力，又辛苦，多吃点，补补身体。”
+						</span>	
+					</div>
+				</div>
+			</li>
+		</ul>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
