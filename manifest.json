@@ -465,7 +465,8 @@
 				"resources": [],
 				"refer": [
 					"html/home/changeUserName.html",
-					"html/home/changeSex.html"
+					"html/home/changeSex.html",
+					"html/home/changeQianMing.html"
 				],
 				"priority": 0
 			},

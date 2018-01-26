@@ -143,7 +143,7 @@
 					<i class="iconfont icon-fanhui2"></i>
 				</span>
 			</li>
-			<li class="binding" style="height: 70px;line-height: 70px;margin-top: 20px;">
+			<li class="binding" style="height: 50px;line-height: 50px;margin-top: 20px;background: #efeff4;border: none;">
 				<span>账号绑定</span>
 				<p>
 					
@@ -214,6 +214,20 @@
 				    }
 				});
 			});
+			document.getElementById('qianming').addEventListener('tap', function() {
+				//个性签名修改
+				var userSex = document.getElementById("userSexCon").innerText;
+				mui.openWindow({
+				    url: 'changeQianMing.html', 
+				    id:'qianming',
+				    extras:{
+				       userSex:userSex,
+				    }
+				});
+			});
+			
+			
+			
 			/*模拟数据后期更改*/
 			mui.plusReady(function(){
 				var self = plus.webview.currentWebview();
