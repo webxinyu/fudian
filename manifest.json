@@ -453,6 +453,27 @@
 					"html/home/homePage.html"
 				],
 				"priority": 0
+			},
+			"html/home/homePage.html": {
+				"resources": [],
+				"refer": [
+					"html/home/personalData.html"
+				],
+				"priority": 0
+			},
+			"html/home/personalData.html": {
+				"resources": [],
+				"refer": [
+					"html/home/changeUserName.html"
+				],
+				"priority": 0
+			},
+			"html/home/changeUserName.html": {
+				"resources": [],
+				"refer": [
+					"html/home/personalData.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {

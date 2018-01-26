@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>个人资料</title>
+		<script src="../../js/mui.min.js"></script>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+		<style type="text/css">
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			ul{
+				padding: 0;
+			}
+			ul,li {
+				list-style: none;
+			}
+			.typePage {
+				margin-top: 55px;
+			}
+			.typePage>input {
+				display: block;
+			}
+			.typePage .username {
+				height: 50px;
+				border: none;
+				border-top: 1px #E5E5E5 solid;
+				border-bottom: 1px #E5E5E5 solid;
+				color: #999;
+			}
+			.typePage>p {
+				height: 40px;
+				line-height: 20px;
+				padding: 0 20px;
+				text-align: center;
+				color: #999;
+			}
+			.typePage .saveBtn {
+				height: 50px;
+				border: none;
+				width: 100%;
+				border-top: 1px #E5E5E5 solid;
+				border-bottom: 1px #E5E5E5 solid;
+				color: #ff6600;
+				font-size: 18px;
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a onclick="back()" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">个人资料</h1>
+		</header>
+		<section class="typePage">
+			<input type="text" name="username" id="username" class="username" value="" />
+			<p>请控制在2-20个字符，仅允许使用汉字、英文、数字和“_”(下划线)。</p>
+			<input type="button" name="saveBtn" id="saveBtn" class="saveBtn" value="保存" />
+		</section>
+		
+		
+		
+		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			mui.init();
+			window.onload = function(){
+				mui.plusReady(function(){
+					var self = plus.webview.currentWebview();
+					var name = self.name;
+					document.getElementById("username").value = name;
+				});
+				document.getElementById('saveBtn').addEventListener('tap', function() {		//模拟数据保存后期更改
+					//打开个人主页页面
+					var saveName = document.getElementById("username").value;
+					mui.openWindow({
+					    url: 'personalData.html', 
+					    id:'saveBtn',
+					    extras:{
+					       savename:saveName,
+					    }
+					});
+				});
+			}
+		</script>
+	</body>
+</html>

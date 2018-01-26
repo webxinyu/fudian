@@ -82,6 +82,157 @@
 				border-radius: 8px;
 				font-size: 12px;
 			}
+			.personalPerformance {			/* 个人成就 */
+				background: #fff;
+				padding: 10px 20px;
+				margin-bottom: 20px;
+			}
+			.xz {
+				height: 40px;
+				display: flex;
+			}
+			.xz>span {
+				flex: 1;
+				height: 40px;
+				line-height: 40px;
+			}
+			.xz>p {
+				flex: 2;
+				height: 40px;
+				line-height: 40px;
+				overflow: hidden;
+				margin: 0;
+			}
+			.xz>p>span {
+				float: left;
+			}
+			.xz>p>span>img {
+				display: block;
+				width: 30px;
+				height: 30px;
+				margin: 5px;
+			}
+			.xz>p>a {
+				display: inline-block;
+				color: #ff6600;
+				text-decoration: underline;
+			}
+			.fooBean {			/* 孚豆 */
+				height: 30px;
+				overflow: hidden;
+				margin: 0;
+			}
+			.fooBean li {
+				float: left;
+				font-size: 14px;
+				padding-right: 10px;
+				color: #999;
+				height: 30px;
+				line-height: 30px;
+			}
+			.fooBean li>b {
+				font-weight: normal;
+			}
+			.location {				/* 定位 */
+				height: 30px;
+				line-height: 30px;
+				margin: 0;
+			}
+			.location>.iconfont {
+				font-size: 20px;
+			}
+			.myNote {			/* 我的帖子 */
+				
+			}
+			.myNote>p {
+				margin: 0;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				background: #fff;
+				font-size: 16px;
+			}
+			.myNoteContent {
+				border-top: 1px #efeff4 solid;
+			}
+			.nodeSum {
+				margin: 0;
+				height: 30px;
+				line-height: 30px;
+				padding: 0 10px;
+				color: #666;
+				background: #fff;
+			}
+			.operate {				/* 发布时间及删除按钮 */
+				height: 40px;
+				padding: 0 10px;
+				display: flex;
+				background: #fff;
+			}
+			.operate article {
+				flex: 6;
+			}
+			.operate article>p {
+				height: 20px;
+				line-height: 20px;
+				margin: 0;
+			}
+			.operate article>p:nth-of-type(1) {
+				color: #666;
+			}
+			.operate>span {
+				flex: 1;
+				text-align: center;
+				height: 40px;
+				line-height: 40px;
+			}
+			.noteList {				/* 发帖内容 */
+				margin: 0;
+			}
+			.noteList li {
+				padding: 10px 0;
+				background: #fff;
+				margin-bottom: 20px;
+			}
+			.noteList li>p {
+				padding: 0 20px;
+				text-indent: 2em;
+				font-size: 18px;
+				color: #333;
+			}
+			.noteList li .videoAndImg {
+				width: 100%;
+			}
+			.noteList li .videoAndImg>img {
+				width: 100%;
+				display: block;
+			}
+			.noteList .admireList {			/* 点评 */
+				display: flex;
+				padding-left: 0;
+			}
+			.noteList .admireList li {
+				flex: 1;
+				text-align: center;
+				height: 30px;
+				line-height: 30px;
+				color: #ccc;
+				font-size: 16px;
+			}
+			.noteList .admireList li>.iconfont {
+				font-size: 20px;
+			}
+			.noteList .admireList li>b {
+				font-weight: normal;
+			}
+			.noteList .admireList li:last-of-type {
+				flex: 2;
+				text-align: right;
+				padding-right: 20px;
+			}
+			.noteList .admireList li.upvote {
+				color: #ccc;
+			}
 		</style>
 	</head>
 	<body>
@@ -89,6 +240,7 @@
 			<a onclick="back()" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">ai小飞</h1>
 		</header>
+		<!-- 个人基本信息 -->
 		<section class="information">
 			<div class="informationLeft">
 				<span>
@@ -110,17 +262,112 @@
 						<p>粉丝</p>
 					</li>
 				</ul>
-				<p>
+				<p id="toPersonalData">
 					<i class="iconfont icon-31qiandao"></i>
 					编辑个人资料
 				</p>
 			</div>
 		</section>
-		
+		<!-- 个人成就 -->
+		<section class="personalPerformance">
+			<!-- 勋章 -->
+			<div class="xz">
+				<span>获得勋章：</span>
+				<p>
+					<span>
+						<img src="../../images/home/xz.jpg"/>
+					</span>
+					<a href="javascript:void(0);">还有没有勋章?点击获取</a>
+				</p>
+			</div>
+			<!-- 积分 -->
+			<ul class="fooBean">
+				<li>
+					<span>积分:</span>
+					<b>544</b>
+				</li>
+				<li>
+					<span>获得内力:</span>
+					<b>300</b>
+				</li>
+				<li>
+					<span>孚豆:</span>
+					<b>666</b>
+				</li>
+			</ul>
+			<p class="location">
+				<i class="iconfont icon-31dingwei"></i>
+				<!-- 定位功能 -->
+				<span id="location">上海</span>
+			</p>
+		</section>
+		<!-- 我的投稿 -->
+		<section class="myNote">
+			<p>我的帖子</p>
+			<div class="myNoteContent">
+				<p class="nodeSum">
+					<span id="">60</span>篇帖子
+				</p>
+				<!-- 发布的时间，以及删除按钮 -->
+				<div class="operate">
+					<article>
+						<p>已发表，粉丝第一时间可见</p>
+						<p>2018-01-26</p>
+					</article>
+					<span id="deleteNote">
+						<i class="iconfont icon-lajixiang"></i>
+					</span>
+				</div>
+				<!-- 发帖内容 -->
+				<ul class="noteList">
+					<li>
+						<p>						
+						生活赋予我们一种巨大的和无限高贵的礼品，这就是青春：充满着力量，
+						充满着期待志愿，充满着求知和斗争的志向，充满着希望信心和青春。
+						</p>
+						<div class="videoAndImg">
+							<img src="../../images/index/list03.jpg"/>
+						</div>
+						<ul class="admireList">
+							<li class="upvote">
+								<i class="iconfont icon-zan1"></i>
+								<b>652</b>
+							</li>
+							<li>
+								<i class="iconfont icon-pinglun1"></i>
+								<b>154</b>
+							</li>
+							<li>
+								<i class="iconfont icon-fenxiang"></i>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>						
+						生活赋予我们一种巨大的和无限高贵的礼品，这就是青春：充满着力量，
+						充满着期待志愿，充满着求知和斗争的志向，充满着希望信心和青春。
+						</p>
+						<div class="videoAndImg">
+							<video width="100%" height="100%" controls="controls"  src="../../videoAndAudio/microShow02.mp4"></video>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
 		
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			mui.init();
+			document.getElementById('toPersonalData').addEventListener('tap', function() {
+				//打开个人资料页面
+				mui.openWindow({
+				    url: 'personalData.html', 
+				    id:'toPersonalData',
+				    extras:{
+				       name:'toPersonalData',
+				    }
+				});
+			});
 		</script>
 	</body>
 </html>

@@ -74,5 +74,22 @@
     "refer": [
       "html/home/homePage.html"
     ]
+  },
+  "html/home/homePage.html": {
+    "refer": [
+      "html/home/personalData.html"
+    ],
+    "resources": []
+  },
+  "html/home/personalData.html": {
+    "refer": [
+      "html/home/changeUserName.html"
+    ],
+    "resources": []
+  },
+  "html/home/changeUserName.html": {
+    "refer": [
+      "html/home/personalData.html"
+    ]
   }
 }

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>个人资料</title>
+		<script src="../../js/mui.min.js"></script>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+		<style type="text/css">
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			ul{
+				padding: 0;
+			}
+			ul,li {
+				list-style: none;
+			}
+			.personalData {
+				padding-top: 45px;
+			}
+			.personalData li {
+				background: #fff;
+				padding: 0 20px;
+				display: flex;
+				height: 50px;
+				line-height: 50px;
+				border-top: 1px #E5E5E5 solid;
+			}
+			.personalData li>span:nth-of-type(1) {
+				flex: 3;
+				font-size: 18px;
+			}
+			.personalData li>p {
+				flex: 5;
+				text-align: right;
+				font-size: 18px;
+				margin: 0;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.personalData li>p>img {			/* 头像 */
+				height: 58px;
+				width: 58px;
+				display: inline-block;
+				border-radius: 29px;
+				-webkit-border-radius: 29px;
+			}
+			.personalData li>span:nth-of-type(2) {
+				flex: 1;
+				text-align: right;
+			}
+			.personalData li>span:nth-of-type(2)>.iconfont {
+				font-size: 25px;
+				color: #999;
+			}
+			.personalData li:first-of-type {
+				height: 80px;
+				padding: 10px 20px;
+				margin-bottom: 20px;
+				border-bottom: 1px #E5E5E5 solid;
+			}
+			.personalData li:first-of-type>span {
+				height: 60px;
+				line-height: 60px;
+			}
+			.personalData li:last-of-type {
+				border-bottom: 1px #E5E5E5 solid;
+			}
+			.personalData li.binding>span:nth-of-type(2)>a {				/* 绑定和解绑 */
+				color: #ff6600;
+				font-size: 16px;
+			}
+			.personalData li.binding>span:nth-of-type(1) {
+				flex: 3;
+				font-size: 18px;
+			}
+			.personalData li.binding>p {
+				flex: 1;
+			}
+			.personalData li.binding>span:nth-of-type(2) {
+				flex: 3;
+				font-size: 18px;
+			}
+			.logoff {			/* 退出登录 */
+				height: 50px;
+				background: #fff;			
+			}
+			.logoff>input {
+				display: block;
+				height: 50px;
+				width: 100%;
+				border: none;
+				outline: none;
+				font-size: 16px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a onclick="back()" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">个人资料</h1>
+		</header>
+		<!-- 基本信息 -->
+		<ul class="personalData">
+			<li>
+				<span>头像</span>
+				<p>
+					<img src="../../images/index/list02.jpg"/>
+				</p>
+				<span>
+					<i class="iconfont icon-fanhui2"></i>
+				</span>
+			</li>
+			<li id="userName">
+				<span>用户名</span>
+				<p id="userNameCon">
+					ai小飞
+				</p>
+				<span>
+					<i class="iconfont icon-fanhui2"></i>
+				</span>
+			</li>
+			<li id="userSex">
+				<span>性别</span>
+				<p>
+					男
+				</p>
+				<span>
+					<i class="iconfont icon-fanhui2"></i>
+				</span>
+			</li>
+			<li id="qianming" style="border-bottom: 1px #E5E5E5 solid;">
+				<span>个性签名</span>
+				<p>
+					我坚信，付出与收获永远是成正比的。
+				</p>
+				<span>
+					<i class="iconfont icon-fanhui2"></i>
+				</span>
+			</li>
+			<li class="binding" style="height: 70px;line-height: 70px;margin-top: 20px;">
+				<span>账号绑定</span>
+				<p>
+					
+				</p>
+				<span>
+					
+				</span>
+			</li>
+			<li class="binding">
+				<span>手机号</span>
+				<p></p>
+				<span>
+					<a href="javascript:void(0);">立即绑定</a>
+				</span>
+			</li>
+			<li class="binding">
+				<span>微信</span>
+				<p></p>
+				<span>
+					<a href="javascript:void(0);">立即绑定</a>
+				</span>
+			</li>
+			<li class="binding">
+				<span>微博</span>
+				<p></p>
+				<span>
+					<a href="javascript:void(0);">立即绑定</a>
+				</span>
+			</li>
+			<li class="binding">
+				<span>腾讯QQ</span>
+				<p></p>
+				<span>
+					<a href="javascript:void(0);">立即绑定</a>
+				</span>
+			</li>
+		</ul>
+		<p class="logoff">
+			<input id="logoff" type="button" name="logoff" id="logoff" value="退出登录" />
+		</p>
+		
+		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			mui.init();
+		</script>
+		<script type="text/javascript">
+		window.onload = function(){
+			/* 个人资料修改二级页 */
+			document.getElementById('userName').addEventListener('tap', function() {
+				//打开个人主页页面
+				var userName = document.getElementById("userNameCon").innerText;
+				mui.openWindow({
+				    url: 'changeUserName.html', 
+				    id:'userName',
+				    extras:{
+				       name:userName,
+				    }
+				});
+			});
+			mui.plusReady(function(){
+				var self = plus.webview.currentWebview();
+				var savename = self.savename;
+				if (savename) {				//模拟数据后期更改
+					document.getElementById("userNameCon").innerText = savename;
+				}		
+			});
+		}
+		</script>
+	</body>
+</html>
