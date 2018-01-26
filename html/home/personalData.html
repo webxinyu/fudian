@@ -127,7 +127,7 @@
 			</li>
 			<li id="userSex">
 				<span>性别</span>
-				<p>
+				<p id="userSexCon">
 					男
 				</p>
 				<span>
@@ -193,7 +193,7 @@
 		window.onload = function(){
 			/* 个人资料修改二级页 */
 			document.getElementById('userName').addEventListener('tap', function() {
-				//打开个人主页页面
+				//用户名修改
 				var userName = document.getElementById("userNameCon").innerText;
 				mui.openWindow({
 				    url: 'changeUserName.html', 
@@ -203,12 +203,28 @@
 				    }
 				});
 			});
+			document.getElementById('userSex').addEventListener('tap', function() {
+				//性别修改
+				var userSex = document.getElementById("userSexCon").innerText;
+				mui.openWindow({
+				    url: 'changeSex.html', 
+				    id:'userSex',
+				    extras:{
+				       userSex:userSex,
+				    }
+				});
+			});
+			/*模拟数据后期更改*/
 			mui.plusReady(function(){
 				var self = plus.webview.currentWebview();
 				var savename = self.savename;
-				if (savename) {				//模拟数据后期更改
+				var saveNameSex = self.saveNameSex;
+				if (savename) {		//用户名称		
 					document.getElementById("userNameCon").innerText = savename;
-				}		
+				}
+				if (saveNameSex) {		//性别			
+					document.getElementById("userSexCon").innerText = saveNameSex;
+				}
 			});
 		}
 		</script>

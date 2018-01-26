@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>个人资料</title>
+		<script src="../../js/mui.min.js"></script>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+		<style type="text/css">
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			ul{
+				padding: 0;
+			}
+			ul,li {
+				list-style: none;
+			}
+			.typePage {
+				margin-top: 55px;
+			}
+			.typePage>input {
+				display: block;
+			}
+			.typePage>ul {
+				margin: 0;
+				padding: 0;
+				background: #fff;
+			}
+			.typePage>ul li {
+				height: 60px;
+				display: flex;
+				padding: 0 20px;
+				border-top: 1px #E5E5E5 solid;
+			}
+			.typePage>ul li:last-of-type {
+				border-bottom: 1px #E5E5E5 solid;
+			}
+			.typePage>ul li>span:nth-of-type(1) {
+				flex: 4;
+				height: 60px;
+				line-height: 60px;
+			}
+			.typePage>ul li>span:nth-of-type(2) {
+				flex: 1;
+				height: 60px;
+				line-height: 60px;
+				text-align: right;
+			}
+			.typePage>ul li>span:nth-of-type(2)>.iconfont {
+				font-size: 25px;
+				color: #ff6600;
+				display: none;
+			}
+			.typePage .saveBtn {
+				height: 50px;
+				border: none;
+				width: 100%;
+				border-top: 1px #E5E5E5 solid;
+				border-bottom: 1px #E5E5E5 solid;
+				color: #ff6600;
+				font-size: 18px;
+				background: #fff;
+				margin-top: 40px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a onclick="back()" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">个人资料</h1>
+		</header>
+		<section class="typePage">
+			<ul class="selectSex">
+				<li>
+					<span class="sexCon" id="boy">男</span>
+					<span>
+						<i class="iconfont icon-biaodankongjiandanxuan"></i>
+					</span>
+				</li>
+				<li>
+					<span class="sexCon" id="girl">女</span>
+					<span>
+						<i class="iconfont icon-biaodankongjiandanxuan"></i>
+					</span>
+				</li>
+				<li>
+					<span class="sexCon" id="unknown">不明</span>
+					<span>
+						<i class="iconfont icon-biaodankongjiandanxuan"></i>
+					</span>
+				</li>
+			</ul>
+			<input type="button" name="saveBtn" id="saveBtn" class="saveBtn" value="保存" />
+		</section>
+		
+		
+		<script src="../../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			mui.init();
+			window.onload = function(){
+				mui.plusReady(function(){
+					var self = plus.webview.currentWebview();
+					var userSex = self.userSex;
+					/* 页面打开时默认的已选项 */
+					if (userSex == "男") {
+						$("#boy").parent().find("span").find(".iconfont").css("display","block").addClass("active");
+					}
+					if (userSex == "女") {
+						$("#girl").parent().find("span").find(".iconfont").css("display","block").addClass("active");
+					}
+					if (userSex == "不明") {
+						$("#unknown").parent().find("span").find(".iconfont").css("display","block").addClass("active");
+					}
+				});
+				document.getElementById('saveBtn').addEventListener('tap', function() {		//模拟数据保存后期更改
+					//打开个人主页页面
+					var saveNameSex = $(".active").parent().parent().find(".sexCon").text();
+					mui.openWindow({
+					    url: 'personalData.html', 
+					    id:'saveBtn',
+					    extras:{
+					       saveNameSex:saveNameSex,
+					    }
+					});
+				});
+				$(".selectSex").on("click","li",function(){
+					var sexSelf = $(this);
+					sexSelf.find("span").find(".iconfont").css("display","block").addClass("active");
+					sexSelf.siblings().find("span").find(".iconfont").css("display","none").removeClass("active");
+				});
+			}
+		</script>
+	</body>
+</html>

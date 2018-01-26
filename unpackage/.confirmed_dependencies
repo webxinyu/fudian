@@ -83,11 +83,18 @@
   },
   "html/home/personalData.html": {
     "refer": [
-      "html/home/changeUserName.html"
+      "html/home/changeUserName.html",
+      "html/home/changeSex.html"
     ],
     "resources": []
   },
   "html/home/changeUserName.html": {
+    "refer": [
+      "html/home/personalData.html"
+    ],
+    "resources": []
+  },
+  "html/home/changeSex.html": {
     "refer": [
       "html/home/personalData.html"
     ]
