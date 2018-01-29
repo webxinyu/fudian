@@ -98,6 +98,37 @@
 				font-size: 16px;
 				text-align: center;
 			}
+			.popUp {			/* 蒙层 */
+				position: fixed;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background: rgba(0,0,0,0.4);
+				margin: 0;
+				z-index: 999;
+				display: none;
+			}
+			.popUp>ul {
+				margin: 0;
+				padding: 0 20px;
+				width: 200px;
+				height: 100px;
+				background: #fff;
+				position: absolute;
+				left: 50%;
+				margin-left: -100px;
+				top: 50%;
+				margin-top: -50px;
+			}
+			.popUp>ul li {
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+			}
+			.popUp>ul li:nth-of-type(1) {
+				border-bottom: 1px #E5E5E5 solid;
+			}
 		</style>
 	</head>
 	<body>
@@ -107,7 +138,7 @@
 		</header>
 		<!-- 基本信息 -->
 		<ul class="personalData">
-			<li>
+			<li id="changeTheHeadImage">
 				<span>头像</span>
 				<p>
 					<img src="../../images/index/list02.jpg"/>
@@ -136,7 +167,7 @@
 			</li>
 			<li id="qianming" style="border-bottom: 1px #E5E5E5 solid;">
 				<span>个性签名</span>
-				<p>
+				<p id="qianmingCon">
 					我坚信，付出与收获永远是成正比的。
 				</p>
 				<span>
@@ -184,17 +215,28 @@
 		<p class="logoff">
 			<input id="logoff" type="button" name="logoff" id="logoff" value="退出登录" />
 		</p>
-		
+		<!-- 更换头像蒙层 -->
+		<div class="popUp" id="popUp">
+			<ul>
+				<li id="openTheAlbum">从相册中选取</li>
+				<li id="cancel">取消</li>
+			</ul>
+		</div>
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			mui.init();
 		</script>
 		<script type="text/javascript">
 		window.onload = function(){
+			window.addEventListener("pageflowrefresh", function (e) {		//刷新页面
+			    location.reload();
+			});
 			/* 个人资料修改二级页 */
 			document.getElementById('userName').addEventListener('tap', function() {
 				//用户名修改
 				var userName = document.getElementById("userNameCon").innerText;
+				console.log("aa");
 				mui.openWindow({
 				    url: 'changeUserName.html', 
 				    id:'userName',
@@ -216,29 +258,32 @@
 			});
 			document.getElementById('qianming').addEventListener('tap', function() {
 				//个性签名修改
-				var userSex = document.getElementById("userSexCon").innerText;
+				var userQianming = document.getElementById("qianmingCon").innerText;
 				mui.openWindow({
 				    url: 'changeQianMing.html', 
 				    id:'qianming',
 				    extras:{
-				       userSex:userSex,
+				       userQianming:userQianming,
 				    }
 				});
 			});
-			
-			
-			
-			/*模拟数据后期更改*/
+			/*mui方法*/
 			mui.plusReady(function(){
-				var self = plus.webview.currentWebview();
-				var savename = self.savename;
-				var saveNameSex = self.saveNameSex;
-				if (savename) {		//用户名称		
-					document.getElementById("userNameCon").innerText = savename;
-				}
-				if (saveNameSex) {		//性别			
-					document.getElementById("userSexCon").innerText = saveNameSex;
-				}
+				
+			});
+			//本地获取个人信息
+			var fdUserName = localStorage.fdUserName;		//用户名称
+			document.getElementById("userNameCon").innerText = fdUserName;
+			var fdSex = localStorage.fdSex;			//性别
+			document.getElementById("userSexCon").innerText = fdSex;
+			var fdqianMing = localStorage.fdqianMing;			//个性签名
+			document.getElementById("qianmingCon").innerText = fdqianMing;
+			/* 更改头像 */
+			$("#changeTheHeadImage").on("tap",function(){
+				$("#popUp").css("display","block");
+			});
+			$("#cancel").on("tap",function(){
+				$("#popUp").css("display","none");
 			});
 		}
 		</script>

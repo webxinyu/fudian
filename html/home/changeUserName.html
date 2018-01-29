@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>个人资料</title>
+		<title>用户名称</title>
 		<script src="../../js/mui.min.js"></script>
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
@@ -64,24 +64,29 @@
 		
 		
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script>
-			mui.init();
+			mui.init({
+				beforeback: function() {  
+				    //获得列表界面的webview  
+				    var list = plus.webview.currentWebview().opener();  
+				    //触发列表界面的自定义事件（refresh）,从而进行数据刷新  
+				    mui.fire(list, 'pageflowrefresh');  
+				    //返回true，继续页面关闭逻辑  
+				    return true;  
+			    } 
+			});
 			window.onload = function(){
 				mui.plusReady(function(){
 					var self = plus.webview.currentWebview();
 					var name = self.name;
 					document.getElementById("username").value = name;
 				});
+				/* 本地存储用户名称 */
 				document.getElementById('saveBtn').addEventListener('tap', function() {		//模拟数据保存后期更改
-					//打开个人主页页面
-					var saveName = document.getElementById("username").value;
-					mui.openWindow({
-					    url: 'personalData.html', 
-					    id:'saveBtn',
-					    extras:{
-					       savename:saveName,
-					    }
-					});
+					var username = $("#username").val();
+					localStorage.setItem("fdUserName",username);
+					mui.toast("保存成功");					
 				});
 			}
 		</script>
