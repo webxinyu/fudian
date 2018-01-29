@@ -14,7 +14,8 @@
 			"html/tab-webview-subpage-chat.html",
 			"html/tab-webview-subpage-contact.html",
 			"html/tab-webview-subpage-about.html",
-			"html/new-webview.html"
+			"html/new-webview.html",
+			"html/photoUpload/barcode_scan.html"
 		]
 	},
 	"launch.html": {
@@ -74,7 +75,9 @@
 		"refer": [
 			"html/home/homePage.html",
 			"html/home/myComments.html",
-			"html/home/game/eliminateGame/index.html"
+			"html/home/game/eliminateGame/index.html",
+			"html/login/login.html",
+			"html/login/setting.html"
 		]
 	},
 	"html/home/homePage.html": {
@@ -100,6 +103,19 @@
 	"html/home/changeSex.html": {
 		"refer": [
 			"html/home/personalData.html"
-		]
+		],
+		"resources": []
+	},
+	"html/login/main.html": {
+		"refer": [
+			"html/login/setting.html"
+		],
+		"resources": []
+	},
+	"html/login/login.html": {
+		"refer": [
+			"html/login/main.html"
+		],
+		"resources": []
 	}
 }

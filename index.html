@@ -223,9 +223,6 @@
 							<a class="mui-control-item" href="#item4mobile">
 								神技能
 							</a>
-							<a class="mui-control-item" href="#item5mobile">
-								广告
-							</a>
 							<a class="mui-control-item" href="#item6mobile">
 								诗和远方
 							</a>
@@ -600,47 +597,90 @@
 								</div>
 							</div>
 						</div>
-						<div id="item5mobile" class="mui-slider-item mui-control-content">
-							<div class="mui-scroll-wrapper">
-								<div class="mui-scroll">
-									<ul class="mui-table-view">
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-1
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-2
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-3
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-4
-										</li>
-										<li class="mui-table-view-cell">
-											第5个选项卡子项-5
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
 						<div id="item6mobile" class="mui-slider-item mui-control-content">
 							<div class="mui-scroll-wrapper">
 								<div class="mui-scroll">
 									<ul class="mui-table-view">
 										<li class="mui-table-view-cell">
-											第6个选项卡子项-1
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list04.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<video width="100%" height="100%" controls="controls" src="videoAndAudio/microShow01.mp4"></video>
+											</section>
+											<ul class="admireList">
+												<li class="upvote">
+													<i class="iconfont icon-zan1"></i>
+													<b>652</b>
+												</li>
+												<li>
+													<i class="iconfont icon-pinglun1"></i>
+													<b>154</b>
+												</li>
+												<li>
+													<i class="iconfont icon-fenxiang"></i>
+												</li>
+											</ul>
 										</li>
 										<li class="mui-table-view-cell">
-											第6个选项卡子项-2
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list03.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<video  width="100%" height="100%" controls="controls" src="videoAndAudio/microShow02.mp4"></video>
+											</section>
+											<ul class="admireList">
+												<li class="upvote">
+													<i class="iconfont icon-zan1"></i>
+													<b>652</b>
+												</li>
+												<li>
+													<i class="iconfont icon-pinglun1"></i>
+													<b>154</b>
+												</li>
+												<li>
+													<i class="iconfont icon-fenxiang"></i>
+												</li>
+											</ul>
 										</li>
 										<li class="mui-table-view-cell">
-											第6个选项卡子项-3
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-4
-										</li>
-										<li class="mui-table-view-cell">
-											第6个选项卡子项-5
+											<h1 class="nicknameList">
+												<span>
+													<img src="images/index/list02.jpg"/>
+												</span>
+												<span>小孚的精品屋</span>
+											</h1>
+											<p class="explainList">
+												北国风光，千里冰封，万里雪飘。看长城内外，分外妖娆。
+											</p>
+											<section class="contentList">
+												<video  width="100%" height="100%" controls="controls" src="videoAndAudio/microShow01.mp4"></video>
+											</section>
+											<ul class="admireList">
+												<li class="upvote">
+													<i class="iconfont icon-zan1"></i>
+													<b>652</b>
+												</li>
+												<li>
+													<i class="iconfont icon-pinglun1"></i>
+													<b>154</b>
+												</li>
+												<li>
+													<i class="iconfont icon-fenxiang"></i>
+												</li>
+											</ul>
 										</li>
 									</ul>
 								</div>
@@ -652,6 +692,8 @@
 		</div>
 
 		<script src="js/mui.min.js"></script>
+		<script src="js/immersed.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/util.js"></script>
 		<script type="text/javascript">
 			(function() {
@@ -739,7 +781,8 @@
 					//自定义监听图标点击事件
 					var active_color = '#fff';
 					drawNativeIcon.addEventListener('click', function(e) {
-						mui.alert('你点击了图标，你在此可以打开摄像头或者新窗口等自定义点击事件。', '悬浮球点击事件');
+						//mui.alert('你点击了图标，你在此可以打开摄像头或者新窗口等自定义点击事件。', '悬浮球点击事件');
+						clicked('html/photoUpload/barcode_scan.html',true,true)
 						// 重绘字体颜色
 						if(active_color == '#fff') {
 							drawNativeIcon.drawText('\ue87c', {}, {

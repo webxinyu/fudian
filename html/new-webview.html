@@ -125,7 +125,21 @@
 				<div class="myNickName">
 					<h4>ai小飞</h4>
 					<h5>个人主页</h5>
-					<p style="display: none;">登录/注册</p>
+				</div>
+				<span>
+					<i class="iconfont icon-fanhui2"></i>
+				</span>
+			</header>
+			<header id="toLogin" style="display: none;">
+				<!-- 登录 -->
+				<span>
+					<img style="display: none;" src="login/images/user-photo.png" />
+					<img src="../images/index/list04.jpg"/>
+				</span>
+				<div class="myNickName">
+					<h4 style="display: none;">ai小飞</h4>
+					<h5 style="display: none;">个人主页</h5>
+					<p>登录/注册</p>
 				</div>
 				<span>
 					<i class="iconfont icon-fanhui2"></i>
@@ -175,7 +189,7 @@
 						<i class="iconfont icon-fanhui2"></i>
 					</span>
 				</li>
-				<li>
+				<li id="toSetting">
 					<span>设置</span>
 					<span></span>
 					<span>
@@ -227,6 +241,26 @@
 				    id:'toGame',
 				    extras:{
 				       toGame:'toGame',
+				    }
+				});
+			});
+			document.getElementById('toLogin').addEventListener('tap', function() {
+				//打开我的评论页面
+				mui.openWindow({
+				    url: 'login/login.html', 
+				    id:'toLogin',
+				    extras:{
+				       toLogin:'toLogin',
+				    }
+				});
+			});
+			document.getElementById('toSetting').addEventListener('tap', function() {
+				//打开设置页面
+				mui.openWindow({
+				    url: 'login/setting.html', 
+				    id:'toSetting',
+				    extras:{
+				       toSetting:'toSetting',
 				    }
 				});
 			});
