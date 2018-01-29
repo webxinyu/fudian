@@ -14,8 +14,12 @@
       "html/tab-webview-subpage-chat.html",
       "html/tab-webview-subpage-contact.html",
       "html/tab-webview-subpage-about.html",
+<<<<<<< Updated upstream
       "html/new-webview.html",
       "html/photoUpload/barcode_scan.html"
+=======
+      "html/new-webview.html"
+>>>>>>> Stashed changes
     ]
   },
   "launch.html": {
@@ -73,11 +77,15 @@
       "fonts/mui.ttf"
     ],
     "refer": [
+<<<<<<< Updated upstream
       "html/home/homePage.html",
       "html/home/myComments.html",
       "html/home/game/eliminateGame/index.html",
       "html/login/login.html",
       "html/login/setting.html"
+=======
+      "html/home/homePage.html"
+>>>>>>> Stashed changes
     ]
   },
   "html/home/homePage.html": {
@@ -103,6 +111,7 @@
   "html/home/changeSex.html": {
     "refer": [
       "html/home/personalData.html"
+<<<<<<< Updated upstream
     ],
     "resources": []
   },
@@ -117,5 +126,8 @@
       "html/login/main.html"
     ],
     "resources": []
+=======
+    ]
+>>>>>>> Stashed changes
   }
 }
