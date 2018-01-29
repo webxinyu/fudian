@@ -161,14 +161,14 @@
 						<i class="iconfont icon-fanhui2"></i>
 					</span>
 				</li>
-				<li>
+				<li id="toGame">
 					<span>我的游戏</span>
 					<span></span>
 					<span>
 						<i class="iconfont icon-fanhui2"></i>
 					</span>
 				</li>
-				<li>
+				<li id="myComments">
 					<span>我的评论</span>
 					<span></span>
 					<span>
@@ -207,6 +207,26 @@
 				    id:'tohomepage02',
 				    extras:{
 				       name:'tohomepage02',
+				    }
+				});
+			});
+			document.getElementById('myComments').addEventListener('tap', function() {
+				//打开我的评论页面
+				mui.openWindow({
+				    url: 'home/myComments.html', 
+				    id:'myComments',
+				    extras:{
+				       name:'myComments',
+				    }
+				});
+			});
+			document.getElementById('toGame').addEventListener('tap', function() {
+				//打开我的评论页面
+				mui.openWindow({
+				    url: 'home/game/eliminateGame/index.html', 
+				    id:'toGame',
+				    extras:{
+				       toGame:'toGame',
 				    }
 				});
 			});

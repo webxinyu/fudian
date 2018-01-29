@@ -298,7 +298,7 @@
 			<p class="location">
 				<i class="iconfont icon-31dingwei"></i>
 				<!-- 定位功能 -->
-				<span id="location">上海</span>
+				<span id="output"></span>
 			</p>
 		</section>
 		<!-- 我的投稿 -->
@@ -368,6 +368,50 @@
 				    }
 				});
 			});
+			
+			
+		mui.plusReady(function(){	
+			/* 地理定位 */
+			var watchId;
+			function geoInf( position ) {
+				var str = "";
+				str += position.addresses+"\n";//获取地址信息
+				//console.log(JSON.stringify(position));
+				outLine( str );
+			}
+			function getPos() {
+				outSet( "获取位置信息:" );
+				plus.geolocation.getCurrentPosition( geoInf, function ( e ) {
+					outSet( "获取位置信息失败："+e.message );
+				}, {geocode:false} );
+			}
+			function watchPos() {
+				if ( watchId ) {
+					return;
+				}
+				watchId = plus.geolocation.watchPosition( function ( p ) {
+					outSet( "监听位置变化信息:" );
+					geoInf( p );
+				}, function ( e ) {
+					outSet( "监听位置变化信息失败："+e.message );
+				}, {geocode:false} );
+			}
+			function clearWatch() {
+				if ( watchId ) {
+					outSet( "停止监听位置变化信息" );
+					plus.geolocation.clearWatch( watchId );
+					watchId = null;
+				}
+			}
+			// 通过定位模块获取位置信息
+			function getGeocode(){
+				//outSet( "获取定位位置信息:" );
+				plus.geolocation.getCurrentPosition( geoInf, function ( e ) {
+					outSet( "获取定位位置信息失败："+e.message );
+				},{geocode:true});
+			}
+			getGeocode()		
+		});
 		</script>
 	</body>
 </html>

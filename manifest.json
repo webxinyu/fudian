@@ -450,7 +450,9 @@
 					"fonts/mui.ttf"
 				],
 				"refer": [
-					"html/home/homePage.html"
+					"html/home/homePage.html",
+					"html/home/myComments.html",
+					"html/home/game/eliminateGame/index.html"
 				],
 				"priority": 0
 			},

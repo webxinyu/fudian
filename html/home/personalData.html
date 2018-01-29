@@ -113,13 +113,13 @@
 				margin: 0;
 				padding: 0 20px;
 				width: 200px;
-				height: 100px;
+				height: 150px;
 				background: #fff;
 				position: absolute;
 				left: 50%;
 				margin-left: -100px;
 				top: 50%;
-				margin-top: -50px;
+				margin-top: -75px;
 			}
 			.popUp>ul li {
 				height: 50px;
@@ -127,6 +127,9 @@
 				text-align: center;
 			}
 			.popUp>ul li:nth-of-type(1) {
+				border-bottom: 1px #E5E5E5 solid;
+			}
+			.popUp>ul li:nth-of-type(2) {
 				border-bottom: 1px #E5E5E5 solid;
 			}
 		</style>
@@ -141,7 +144,7 @@
 			<li id="changeTheHeadImage">
 				<span>头像</span>
 				<p>
-					<img src="../../images/index/list02.jpg"/>
+					<img id="headImg" src="../../images/index/list02.jpg"/>
 				</p>
 				<span>
 					<i class="iconfont icon-fanhui2"></i>
@@ -218,11 +221,13 @@
 		<!-- 更换头像蒙层 -->
 		<div class="popUp" id="popUp">
 			<ul>
-				<li id="openTheAlbum">从相册中选取</li>
+				<li id="photograph" onclick="appendByCamera()">拍照</li>
+				<li id="openTheAlbum" onclick="appendByGallery()">从相册中选取</li>
 				<li id="cancel">取消</li>
 			</ul>
 		</div>
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/immersed.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			mui.init();
@@ -286,6 +291,133 @@
 				$("#popUp").css("display","none");
 			});
 		}
+		/* 地理定位 */
+		var watchId;
+		function geoInf( position ) {
+			var str = "";
+			str += "地址："+position.addresses+"\n";//获取地址信息
+			str += "坐标类型："+position.coordsType+"\n";
+			var timeflag = position.timestamp;//获取到地理位置信息的时间戳；一个毫秒数；
+			str += "时间戳："+timeflag+"\n";
+			var codns = position.coords;//获取地理坐标信息；
+			var lat = codns.latitude;//获取到当前位置的纬度；
+			str += "纬度："+lat+"\n";
+			var longt = codns.longitude;//获取到当前位置的经度
+			str += "经度："+longt+"\n";
+			var alt = codns.altitude;//获取到当前位置的海拔信息；
+			str += "海拔："+alt+"\n";
+			var accu = codns.accuracy;//地理坐标信息精确度信息；
+			str += "精确度："+accu+"\n";
+			var altAcc = codns.altitudeAccuracy;//获取海拔信息的精确度；
+			str += "海拔精确度："+altAcc+"\n";
+			var head = codns.heading;//获取设备的移动方向；
+			str += "移动方向："+head+"\n";
+			var sped = codns.speed;//获取设备的移动速度；
+			str += "移动速度："+sped;
+			console.log(JSON.stringify(position));
+			outLine( str );
+		}
+		function getPos() {
+			outSet( "获取位置信息:" );
+			plus.geolocation.getCurrentPosition( geoInf, function ( e ) {
+				outSet( "获取位置信息失败："+e.message );
+			}, {geocode:false} );
+		}
+		function watchPos() {
+			if ( watchId ) {
+				return;
+			}
+			watchId = plus.geolocation.watchPosition( function ( p ) {
+				outSet( "监听位置变化信息:" );
+				geoInf( p );
+			}, function ( e ) {
+				outSet( "监听位置变化信息失败："+e.message );
+			}, {geocode:false} );
+		}
+		function clearWatch() {
+			if ( watchId ) {
+				outSet( "停止监听位置变化信息" );
+				plus.geolocation.clearWatch( watchId );
+				watchId = null;
+			}
+		}
+		// 通过定位模块获取位置信息
+		function getGeocode(){
+			outSet( "获取定位位置信息:" );
+			plus.geolocation.getCurrentPosition( geoInf, function ( e ) {
+				outSet( "获取定位位置信息失败："+e.message );
+			},{geocode:true});
+		}
+		console.log("aaa==" + geoInf(position));
+		</script>
+		<script type="text/javascript">
+			/******* 上传头像 ********/
+			var server="http://demo.dcloud.net.cn/helloh5/uploader/upload.php";
+			var files=[];
+			// 上传文件
+			function upload(){
+				if(files.length<=0){
+					plus.nativeUI.alert("没有添加上传文件！");
+					return;
+				}
+				outSet("开始上传：")
+				var wt=plus.nativeUI.showWaiting();
+				var task=plus.uploader.createUpload(server,
+					{method:"POST"},
+					function(t,status){ //上传完成
+						if(status==200){
+							outLine("上传成功："+t.responseText);
+							plus.storage.setItem("uploader",t.responseText);
+							var w=plus.webview.create("uploader_ret.html","uploader_ret.html",{scrollIndicator:'none',scalable:false});
+							w.addEventListener("loaded",function(){
+								wt.close();
+								w.show("slide-in-right",300);
+							},false);
+						}else{
+							outLine("上传失败："+status);
+							wt.close();
+						}
+					}
+				);
+				task.addData("client","HelloH5+");
+				task.addData("uid",getUid());
+				for(var i=0;i<files.length;i++){
+					var f=files[i];
+					task.addFile(f.path,{key:f.name});
+				}
+				task.start();
+			}
+			// 拍照添加文件
+			function appendByCamera(){
+				plus.camera.getCamera().captureImage(function(p){
+					appendFile(p);
+				});	
+			}
+			// 从相册添加文件
+			function appendByGallery(){
+				plus.gallery.pick(function(p){
+			        appendFile(p);
+			    });
+			}
+			// 添加文件
+			var index=1;
+			function appendFile(p){
+//				var fe=document.getElementById("files");
+//				var li=document.createElement("li");
+				$("#popUp").css("display","none");
+				var n=p.substr(p.lastIndexOf('/')+1);
+				console.log(n);
+				$("#headImg").attr("src",n);
+//				li.innerText=n;
+//				fe.appendChild(li);
+//				files.push({name:"uploadkey"+index,path:p});
+//				index++;
+//				empty.style.display="none";
+			}
+			// 产生一个随机数
+			function getUid(){
+				return Math.floor(Math.random()*100000000+10000000).toString();
+			}
 		</script>
 	</body>
 </html>

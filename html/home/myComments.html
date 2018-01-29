@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的评论</title>
+		<script src="../../js/mui.min.js"></script>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+		<style type="text/css">
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			ul{
+				padding: 0;
+			}
+			ul,li {
+				list-style: none;
+			}
+			.myCommentsList {			/* 我的评论列表 */
+				margin-top: 50px;
+			}
+			.myCommentsList li {
+				padding: 10px 20px;
+				background: #fff;
+				margin-bottom: 1px;
+			}
+			.myCommentsContent {		/* 我的信息 */
+				display: flex;
+				height: 50px;
+				padding: 5px 0;
+			}
+			.myCommentsContent>span:first-of-type {
+				flex: 2;
+			}
+			.myCommentsContent>span:first-of-type>img {		/* 头像 */
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+			}
+			.myCommentsContent .myInformation {			/* 信息 */	
+				flex: 8;
+			}
+			.myCommentsContent .myInformation>h4 {
+				height: 20px;
+				line-height: 20px;
+				font-size: 14px;
+				font-weight: normal;
+				color: #666;
+			}
+			.myCommentsContent .myInformation>h5 {
+				height: 20px;
+				font-size: 12px;
+			}
+			.myCommentsContent>span:last-of-type {		/* 删除按钮 */
+				flex: 1;
+				height: 40px;
+				line-height: 40px;
+				text-align: right;
+				color: #999;
+			}
+			.draft {				/* 我的评论及投稿的内容 */
+				display: flex;
+			}
+			.draft>span {
+				flex: 2;
+			}
+			.draft .draftComments {
+				flex: 9;
+			} 
+			.draft .draftComments .draftCommentsTitle {		/* 我评论的内容 */
+				padding: 10px 0;
+			}
+			.draft .draftComments .draftCommentsTitle img {
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+			}
+			.draft .draftComments .draftCommentsContnent {		/* 作者发表的内容 */
+				padding: 10px 5px;
+				background: #f4efec;
+				color: #888;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a onclick="back()" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的评论</h1>
+		</header>
+		<ul class="myCommentsList">
+			<li>
+				<!-- 个人信息 -->
+				<section class="myCommentsContent">
+					<span>
+						<img src="../../images/index/list03.jpg"/>
+					</span>
+					<div class="myInformation">
+						<h4>小飞</h4>
+						<h5>01-29 13:44</h5>
+					</div>
+					<span>
+						<i class="iconfont icon-lajixiang"></i>
+					</span>
+				</section>
+				<!-- 评论内容及评论的投稿 -->
+				<section class="draft">
+					<span></span>
+					<div class="draftComments">
+						<div class="draftCommentsTitle">
+							这里是我的评论内容！
+						</div>
+						<div class="draftCommentsContnent">
+							这里是发件人投稿的内容图片、视屏、文字。
+						</div>
+					</div>
+				</section>
+			</li>
+			<li>
+				<!-- 个人信息 -->
+				<section class="myCommentsContent">
+					<span>
+						<img src="../../images/index/list03.jpg"/>
+					</span>
+					<div class="myInformation">
+						<h4>小飞</h4>
+						<h5>01-29 13:44</h5>
+					</div>
+					<span>
+						<i class="iconfont icon-lajixiang"></i>
+					</span>
+				</section>
+				<!-- 评论内容及评论的投稿 -->
+				<section class="draft">
+					<span></span>
+					<div class="draftComments">
+						<div class="draftCommentsTitle">
+							<img src="../../images/index/list01.jpg"/>
+						</div>
+						<div class="draftCommentsContnent">
+							这里是发件人投稿的内容图片、视屏、文字。这里是发件人投稿的内容图片、视屏、文字。
+							这里是发件人投稿的内容图片、视屏、文字。这里是发件人投稿的内容图片、视屏、文字。
+						</div>
+					</div>
+				</section>
+			</li>
+		</ul>
+		
+		
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
