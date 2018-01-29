@@ -238,7 +238,7 @@
 	<body>
 		<header id="header" class="mui-bar mui-bar-nav">
 			<a onclick="back()" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">ai小飞</h1>
+			<h1 class="mui-title" id="userNick">ai小飞</h1>
 		</header>
 		<!-- 个人基本信息 -->
 		<section class="information">
@@ -356,8 +356,26 @@
 		</section>
 		
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				window.addEventListener("pageflowrefresh", function (e) {		//刷新页面
+				    location.reload();
+				});
+				var fdUserName = localStorage.fdUserName;		//用户名称
+				document.getElementById("userNick").innerText = fdUserName;
+			}
+		</script>
 		<script>
-			mui.init();
+			mui.init({
+				beforeback: function() {  
+			    //获得列表界面的webview  
+			    var list = plus.webview.currentWebview().opener();  
+			    //触发列表界面的自定义事件（refresh）,从而进行数据刷新  
+			    mui.fire(list, 'pageflowrefresh');  
+			    //返回true，继续页面关闭逻辑  
+			    return true;  
+			    }
+			});
 			document.getElementById('toPersonalData').addEventListener('tap', function() {
 				//打开个人资料页面
 				mui.openWindow({
@@ -370,7 +388,10 @@
 			});
 			
 			
-		mui.plusReady(function(){	
+		mui.plusReady(function(){
+			/* 获取父页面传过来的参数 */
+			var self = plus.webview.currentWebview();
+			var usernick = self.usernick;
 			/* 地理定位 */
 			var watchId;
 			function geoInf( position ) {

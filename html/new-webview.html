@@ -123,7 +123,7 @@
 					<img src="../images/index/list04.jpg"/>
 				</span>
 				<div class="myNickName">
-					<h4>ai小飞</h4>
+					<h4 id="userNick">ai小飞</h4>
 					<h5>个人主页</h5>
 				</div>
 				<span>
@@ -201,16 +201,25 @@
 		
 		
 		
-		
-		<script>
+		<script type="text/javascript">
 			mui.init();
+			window.onload = function(){
+				window.addEventListener("pageflowrefresh", function (e) {		//刷新页面
+				    location.reload();
+				});
+				var fdUserName = localStorage.fdUserName;		//用户名称
+				document.getElementById("userNick").innerText = fdUserName;
+			}			
+		</script>
+		<script>			
 			document.getElementById('tohomepage').addEventListener('tap', function() {
+				var userNick = document.getElementById("userNick").innerText;
 				//打开个人主页页面
 				mui.openWindow({
 				    url: 'home/homePage.html', 
 				    id:'tohomepage',
 				    extras:{
-				       name:'tohomepage',
+				       usernick:userNick,
 				    }
 				});
 			});

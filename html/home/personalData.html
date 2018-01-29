@@ -230,7 +230,16 @@
 		<script src="../../js/immersed.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script>
-			mui.init();
+			mui.init({
+				beforeback: function() {  
+			    //获得列表界面的webview  
+			    var list = plus.webview.currentWebview().opener();  
+			    //触发列表界面的自定义事件（refresh）,从而进行数据刷新  
+			    mui.fire(list, 'pageflowrefresh');  
+			    //返回true，继续页面关闭逻辑  
+			    return true;  
+			    }
+			});
 		</script>
 		<script type="text/javascript">
 		window.onload = function(){
