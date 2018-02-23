@@ -199,8 +199,38 @@
 			.upvoteActive {
 				color: #ff6600;
 			}
-			.mui-table-view-cell .admireList li.upvote {
+			.mui-table-view-cell .admireList li.upvote {	/* 点赞 */
 				color: #ccc;
+				position: relative;
+			}
+			.upvoteAnimation {
+				position:absolute;
+				color:rgba(255,102,0,1);
+				font-style:normal;
+				right:15px;
+				top:0;
+				animation: myfirst 2s;
+				-webkit-animation: myfirst 2s;	/* Safari 和 Chrome */
+			}
+			@keyframes myfirst{
+				from {
+					top: 0px;
+					color: rgba(255,102,0,1);
+				}
+				to {
+					top: -15px;
+					color: rgba(255,102,0,0);
+				}
+			}
+			@-webkit-keyframes myfirst{ /* Safari 和 Chrome */
+				from {
+					top: 0px;
+					color: rgba(255,102,0,1);
+				}
+				to {
+					top: -15px;
+					color: rgba(255,102,0,0);
+				}
 			}
 		</style>
 	</head>
@@ -981,13 +1011,20 @@
 		<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function(){
+				//点赞
 				$(".upvote").css("color","#ccc");
 				$(".upvote").on("tap",function(){
 					var upvoteSelf = $(this);
-					console.log(upvoteSelf[0].style);
 					if (upvoteSelf[0].style.color == "rgb(204, 204, 204)") {
 						upvoteSelf.css("color","#FF6600");
-						upvoteSelf.find("b").text(parseInt(upvoteSelf.find("b").text())+1)
+						upvoteSelf.find("b").text(parseInt(upvoteSelf.find("b").text())+1);
+						upvoteSelf.append('<i class="upvoteAnimation">+1</i>');
+						var upTimer = null;
+						clearTimeout(upTimer);
+						upTimer = setTimeout(function(){
+							upvoteSelf.find(".upvoteAnimation").css("display","none");
+							clearTimeout(upTimer);
+						},2000)
 					} else{
 						mui.toast("您已点赞过了");
 					}
@@ -1031,10 +1068,10 @@
 				}
 				plus.share.sendWithSystem?plus.share.sendWithSystem(msg, function(){
 					outLine('Success');
-					console.log('Success');
+					//console.log('Success');
 				}, function(e){
 					outLine('Failed: '+JSON.stringify(e));
-					console.log('Failed: '+JSON.stringify(e));
+					//console.log('Failed: '+JSON.stringify(e));
 				}):shareSystemNativeJS();
 			}
 			function shareSystemNativeJS() {
@@ -1055,11 +1092,11 @@
 				var f = new File(p);
 				var uri = Uri.fromFile(f);
 				if(f.exists()&&f.isFile()){
-					console.log('image/*');
+					//console.log('image/*');
 					intent.setType('image/*');
 					intent.putExtra(Intent.EXTRA_STREAM,uri);
 				}else{
-					console.log('text/plain');
+					//console.log('text/plain');
 					intent.setType('text/plain');
 				}
 				intent.putExtra(Intent.EXTRA_SUBJECT,'HelloH5');

@@ -7,7 +7,7 @@
 	"id": "H558EEA77",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "孚点网",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "1.0.3",/*应用版本名称*/
+		"name": "1.0.4",/*应用版本名称*/
 		"code": ""
 	},
 	"description": "孚点网",/*应用描述信息*/
@@ -264,7 +264,7 @@
 		},
 		"splashscreen": {
 			"autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
-			"waiting": true
+			"waiting": true,"delay":"3"
 		},
 		"popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
 		"runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
@@ -275,12 +275,12 @@
 					"qq": {
 						"appid": "H558EEA77",
 						"description": "QQ分享"
-					}
+					},"weixin":{"appid":"wxa4053c2b878dd928","appsecret":"ed55e8d5dd39dcaca3ffb7847e6a2ac3","description":"可选，微信分享"}
 				},
 				"payment": {
 					"weixin": {
 						"description": "微信支付",
-						"appid": "H558EEA77"
+						"appid": "wxa4053c2b878dd928"
 					},
 					"alipay": {
 						"description": "阿里支付",
@@ -293,11 +293,11 @@
 				"oauth": {
 					"qq": {
 						"appid": "H558EEA77"
-					}
+					},"weixin":{"appid":"wxa4053c2b878dd928","appsecret":"ed55e8d5dd39dcaca3ffb7847e6a2ac3"}
 				},
 				"maps": {
 					"amap": {
-						"appkey_ios": "",
+						"appkey_ios": "3df08968a8b9593aef70e992a3d7a829",
 						"appkey_android": "c4059333837ed15aab356c8882c78ac5",
 						"description": ""
 					}
@@ -404,7 +404,7 @@
 					"xxhdpi": "images/index/startPage.png"
 				}
 			}
-		}
+		},"ads":{"rp":true,"splash":true,"push":true,"spot":true},"adid":""
 	},
 	"dependencies": {
 		"pages": {
