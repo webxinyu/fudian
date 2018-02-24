@@ -209,8 +209,8 @@
 				font-style:normal;
 				right:15px;
 				top:0;
-				animation: myfirst 2s;
-				-webkit-animation: myfirst 2s;	/* Safari 和 Chrome */
+				animation: myfirst 1s;
+				-webkit-animation: myfirst 1s;	/* Safari 和 Chrome */
 			}
 			@keyframes myfirst{
 				from {
@@ -218,7 +218,7 @@
 					color: rgba(255,102,0,1);
 				}
 				to {
-					top: -15px;
+					top: -20px;
 					color: rgba(255,102,0,0);
 				}
 			}
@@ -228,7 +228,7 @@
 					color: rgba(255,102,0,1);
 				}
 				to {
-					top: -15px;
+					top: -20px;
 					color: rgba(255,102,0,0);
 				}
 			}
@@ -880,7 +880,7 @@
 					var aniShow = {};
 					util.initSubpage(aniShow);
 					
-					var 	nview = plus.nativeObj.View.getViewById('tabBar'),
+					var nview = plus.nativeObj.View.getViewById('tabBar'),
 						activePage = plus.webview.currentWebview(),
 						targetPage,
 						subpages = util.options.subpages,
@@ -912,8 +912,14 @@
 						if(targetPage == activePage) {
 							return;
 						}
-
-						if(currIndex !== 3) { 
+						
+						//底部选项卡切换
+						util.toggleNview(currIndex);
+						// 子页面切换
+						util.changeSubpage(targetPage, activePage, aniShow);
+						//更新当前活跃的页面
+						activePage = targetPage;
+						/*if(currIndex !== 3) { 
 							//底部选项卡切换
 							util.toggleNview(currIndex);
 							// 子页面切换
@@ -923,7 +929,7 @@
 						} else {
 							//第四个tab 打开新窗口
 							plus.webview.open('html/new-webview.html', {}, 'slide-in-right', 200);
-						}
+						}*/
 					});
 				});
 			})();
@@ -1024,7 +1030,7 @@
 						upTimer = setTimeout(function(){
 							upvoteSelf.find(".upvoteAnimation").css("display","none");
 							clearTimeout(upTimer);
-						},2000)
+						},1000)
 					} else{
 						mui.toast("您已点赞过了");
 					}
