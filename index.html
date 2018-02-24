@@ -853,7 +853,12 @@
 					var active_color = '#fff';
 					drawNativeIcon.addEventListener('click', function(e) {
 						//mui.alert('你点击了图标，你在此可以打开摄像头或者新窗口等自定义点击事件。', '悬浮球点击事件');
-						clicked('html/photoUpload/barcode_scan.html',true,true)
+						//clicked('html/photoUpload/barcode_scan.html',true,true);
+						//打开发表页面
+						mui.openWindow({
+						    url: 'html/publish.html', 
+						    id:'iconBg',
+						});
 						// 重绘字体颜色
 						if(active_color == '#fff') {
 							drawNativeIcon.drawText('\ue87c', {}, {

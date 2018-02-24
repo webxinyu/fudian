@@ -7,7 +7,8 @@
 			"html/tab-webview-subpage-chat.html",
 			"html/tab-webview-subpage-contact.html",
 			"html/new-webview.html",
-			"html/photoUpload/barcode_scan.html"
+			"html/photoUpload/barcode_scan.html",
+			"html/publish.html"
 		]
 	},
 	"html/new-webview.html": {

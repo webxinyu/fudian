@@ -420,7 +420,8 @@
 				"refer": [
 					"html/tab-webview-subpage-contact.html",
 					"html/new-webview.html",
-					"html/photoUpload/barcode_scan.html"
+					"html/photoUpload/barcode_scan.html",
+					"html/publish.html"
 				],
 				"priority": 0
 			},
